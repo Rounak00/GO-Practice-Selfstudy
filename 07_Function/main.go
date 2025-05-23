@@ -45,3 +45,18 @@ func nums(nums ...int)int{
 //send data from slice to arguments
 num:=[]int{1,2,3,4,5,6,6};
 function(num...);
+
+
+
+// closures
+func a() func()int {
+ var i int=0;
+ return func()int{
+    i++
+    return i
+  }
+}
+
+iinc := a()
+iinc() //1
+iinc()//2
