@@ -40,4 +40,35 @@ function map(){
 }
 
 --------------Map-----------------
+//creating
+m:= map[string]int{"price":40}
+ m :=make(map[string]string)
+ m["name"]="Rounak"
+fmt.Println(m["name"])//rounak
+fmt.Println(m["something"])//if key doesnot exist then return zero value
+len(m)//1
+delete(m,"name")
+clear(m)
+_, ok := m["price"] //check if the element there based on ok, any name we can give
+k, ok :=m["price"] // here k returns value for the key 
+
+//maps package also here 
+maps.Equal(m1,m2)
+
 --------------Range---------------
+
+// iterating over DS
+nums := []int {6,7,8,9,8}
+
+for _,num := range nums{ // the first argument is index so for ind,num := range nums{}
+   fmt.Println(num);
+ }
+
+//for map
+for key,value := range map{}
+
+
+//string 
+for ind, char := range "golang" {} // print like this 0 103 it is unicode of character
+//as go use unicode so posiible to see a byte will take two index as unicode bigger than ascii
+
