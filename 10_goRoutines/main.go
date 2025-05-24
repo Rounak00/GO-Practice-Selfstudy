@@ -15,3 +15,19 @@ func main(){
 go func(i int){
   fmt.PRintln(i)
 }(i)
+
+
+// Wait group for using instead of sleep
+
+func task(id int, w *sync.WaitGroup){
+ defer w.Done() // will remove that 1
+ fmt.Println("Doint task ->", id);
+}
+func main(){
+var wg sync.WaitGroup
+  for i := 0; i< 10; i++ {
+   wg.add(1)
+    go task(i, &wg);
+  }
+wg.Wait()
+}
